@@ -1,0 +1,8 @@
+* {
+    box-sizing: border-box;
+}
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
