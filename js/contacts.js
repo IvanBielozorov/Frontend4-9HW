@@ -9,6 +9,12 @@ const refs = {
   removeAll: document.querySelector(".js-remove-all"),
   removeContact: document.querySelector(".js-remove-contact"),
   telRemove: document.querySelector(".tel-remove"),
+  editForm: document.querySelector(".js-edit-contacts"),
+  telFind: document.querySelector(".tel-find"),
+  editName: document.querySelector(".edit-name"),
+  editLastName: document.querySelector(".edit-last-name"),
+  editTel: document.querySelector(".edit-tel"),
+  editEmail: document.querySelector(".edit-email"),
 };
 
 refs.form.addEventListener("submit", onSubBtnClick);
@@ -63,7 +69,6 @@ function onRemoveContactClick(e) {
   renderContacts();
 }
 
-
 function onFormInput() {
   const formData = new FormData(refs.form);
   const data = Object.fromEntries(formData);
@@ -80,5 +85,43 @@ function restoreFormData() {
   refs.lastName.value = savedData.lastName || "";
   refs.tel.value = savedData.telephone || "";
   refs.email.value = savedData.email || "";
-};
-restoreFormData()
+}
+restoreFormData();
+
+refs.editForm.addEventListener("submit", onEditFormSubmit);
+
+function onEditFormSubmit(event) {
+  event.preventDefault();
+
+  const telNum = refs.telFind.value;
+
+   const contactToEdit = contactsArr.find(
+     (contact) => contact.telephone === telNum,
+   );
+
+  // if (!contactToEdit) return;
+  if (!contactToEdit) {
+    alert("Contact not found");
+    return
+  }
+
+   if (refs.editName.value !== "") {
+     contactToEdit.name = refs.editName.value;
+  }
+
+   if (refs.editLastName.value !== "") {
+     contactToEdit.lastName = refs.editLastName.value;
+   }
+
+   if (refs.editTel.value !== "") {
+     contactToEdit.telephone = refs.editTel.value;
+   }
+
+   if (refs.editEmail.value !== "") {
+     contactToEdit.email = refs.editEmail.value;
+   }
+
+   localStorage.setItem("contacts", JSON.stringify(contactsArr));
+
+   renderContacts();
+}
