@@ -12,6 +12,7 @@ li {
 }
 .form {
   width: 250px;
+  height: 400px;
   padding: 15px;
   display: flex;
   flex-direction: column;
@@ -37,4 +38,20 @@ li {
   flex-direction: column;
   align-items: center;
   background-color: rgb(122, 218, 240);
+}
+.buttons-choice {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+.tel-find {
+  width: 100%;
+}
+.edit-contacts {
+  padding: 15px;
+  background-color: gainsboro;
+}
+.i {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

@@ -11,27 +11,57 @@
     <form class="form js-form">
         <h1 class="form-title">Form</h1>
         <label class="form-label">Name
-            <input class="input js-name" type="text" placeholder="Enter your name...">
+            <input class="input js-name" type="text" name="name" placeholder="Enter your name...">
         </label>
         <label class="form-label">Last name
-            <input class="input js-last-name" type="text" placeholder="Enter your last name...">
+            <input class="input js-last-name" type="text" name="lastName" placeholder="Enter your last name...">
         </label>
         <label class="form-label">Telephone
-            <input class="input js-tel" type="tel" placeholder="Enter your telephone...">
+            <input class="input js-tel" type="tel" name="telephone" placeholder="Enter your telephone...">
         </label>
         <label class="form-label">Email
-            <input class="input js-email" type="email" placeholder="Enter your email...">
+            <input class="input js-email" type="email" name="email" placeholder="Enter your email...">
         </label>
-        <button class="sub-btn">Submit</button>
+        <button class="sub-btn">Add contact</button>
     </form>
+
+    <div class="buttons-choice">
+    <button class="js-remove-all">Remove all contacts</button>
+
+    <div class="label-contact">
+        <label>
+            <input class="tel-remove" type="tel" placeholder="Enter phone number...">
+        </label>
+    <button class="js-remove-contact">Remove a contact</button>
+    </div>
+      <hr>
+    <div class="edit-contacts js-edit-contacts">
+     <label>
+            <input class="tel-find" type="tel" placeholder="Enter phone number of contact to edit...">
+        </label>
+        <br>
+        <hr>
+
+         <label class="form-label">Name
+            <input class="i edit-name" type="text" name="edit-name" placeholder="Enter new name if needed...">
+        </label>
+        <label class="form-label">Last name
+            <input class="i edit-last-name" type="text" name="edit-lastName" placeholder="Enter new last name if needed...">
+        </label>
+        <label class="form-label">Telephone
+            <input class="i edit-tel" type="tel" name="edit-tel" placeholder="Enter new telephone if needed...">
+        </label>
+        <label class="form-label">Email
+            <input class="i edit-email" type="email" name="edit-email" placeholder="Enter new email if needed...">
+        </label>
+    <button class="js-edit-contacts">Confirm edit of this contact</button>
+
+    </div>
+    </div>
+
     <div class="info">
-        <h2>Your info</h2>
-        <h3>Your name</h3>
-        <h3>Your lastname</h3>
-        <h3>Your email</h3>
-        <h3>Your contacts</h3>
+        <h2>Your contacts</h2>
         <div class="info-contacts">
-            
         </div>
     </div>
     </div>
